@@ -1,0 +1,45 @@
+<template name="Data">
+    <h1 class="page-title">Database</h1>
+    <h1>Rules</h1>
+    {{#if rulesNew}}
+        {{> NewRule}}
+        <br>
+    {{else}}
+        <button class="rules-new">New Rule</button>
+    {{/if}}
+    <table class="{{editMode}}">
+        <tr>
+            <th>Id</th>
+            <th>Rule</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Created</th>
+            <th>Author</th>
+            <th>Used</th>
+        </tr>
+        {{#each rules}}
+            <tr>
+                <td class="user_id">{{_id}}</td>
+                <td>{{rule}}</td>
+                <td>{{desc}}</td>
+                <td>{{cat}}</td>
+                <td>{{dateFormat}}</td>
+                <td>{{createdBy author}}</td>
+                <td>{{checkRules}}
+                    {{#if currentEdit}}
+                        <div class="user-edit">
+                            <i class="fa fa-close close-edit-mode"></i>
+                            <h3>Edit Rule</h3>
+                            {{#if checkInRules}}
+                                <button class="toggle-rule">Remove from Rules</button>
+                            {{else}}
+                                <button class="toggle-rule">Add to Rules</button>
+                                <button class="btn-danger action-delete">Delete</button>
+                            {{/if}}
+                        </div>
+                    {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</template>

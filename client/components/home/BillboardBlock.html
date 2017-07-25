@@ -1,0 +1,10 @@
+<template name="BillboardBlock">
+    <div class="col-sm-{{width}} billboardBlock">
+        <h2>{{title}}</h2>
+        <h4>{{subtitle}}</h4>
+        <br>
+        {{#each getButtons}}
+            {{>BillboardButton button=(getText) action=(getAction)}}
+        {{/each}}
+    </div>
+</template>

@@ -1,0 +1,24 @@
+<template name="HomeLayout">
+    <main>
+        {{> LoginModal}}
+        <div class="billboard">
+            <div class="container-fluid">
+                <div class="row" style="margin-top: 10%">
+                    <div class="col-md-1 col-lg-2"></div>
+                    <div class="col-sm-12 col-md-10 col-lg-8">
+                        {{#if $not modalOpen}}
+                            <h1>SANCTUARY</h1>
+                            <h4>You just opened the portal to experiencing internet hypnosis<br>A community where you can enjoy hypnosis, friends and meet new people</h4>
+                            <div class="row">
+                                {{> BillboardBlock width=12 title="Why not try it?" subtitle="Sign up and give us a try."
+                                        buttonSettings='[{"text":"Sign Up","action":"register"},{"text":"Log In","action":"login"}]'
+                                }}
+                            </div>
+                        {{/if}}
+                    </div>
+                    <div class="col-md-1 col-lg-2"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</template>

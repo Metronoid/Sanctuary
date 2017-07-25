@@ -1,0 +1,11 @@
+<template name="MainNav">
+    <nav class="main-nav">
+        <ul>
+            {{#if currentUser}}
+                <li><a class="logout">Log Out</a></li>
+            {{else}}
+                <li><a class="login-toggle">Login</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+</template>

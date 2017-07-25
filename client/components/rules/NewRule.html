@@ -1,0 +1,22 @@
+<template name="NewRule">
+    <section class="form-rule">
+        <!--<p>Rule submission limit is: 1 per day.</p>-->
+        <!--{{#if check}}-->
+            {{#autoForm collection="Rules" id="insertRuleForm" type="insert" class="new-rule-form"}}
+                <fieldset>
+                    <i class="fa fa-close simple-close-edit"></i>
+                    <!--<legend>Add a Book</legend>-->
+                    {{> afQuickField name='rule'}}
+                    {{> afQuickField name='cat'}}
+                    {{> afQuickField name='desc' rows=6}}
+                    {{> afQuickField name='inRules'}}
+                    {{> afQuickField name='author'}}
+                    {{> afQuickField name='createdAt'}}
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            {{/autoForm}}
+        <!--{{else}}-->
+            <!--<p>You have already submitted your maximum of new rules per day.</p>-->
+        <!--{{/if}}-->
+    </section>
+</template>

@@ -1,0 +1,12 @@
+<template name="AdminSideNav">
+    <nav class="side-nav">
+        <ul>
+            {{#if isInRole 'user-admin'}}
+                <li><a class="{{active 'admin'}} side-nav-admin" href="/admin"><i class="fa fa-desktop"></i>Admin Panel</a></li>
+                <li><a class="{{active 'users'}} side-nav-users" href="/admin/users"><i class="fa fa-group"></i>Users</a></li>
+                <li><a class="{{active 'data'}} side-nav-database" href="/admin/data"><i class="fa fa-database"></i>Database</a></li>
+            {{/if}}
+            <li><a class="admin-to-nav"><i class="fa fa-close"></i> Close</a></li>
+        </ul>
+    </nav>
+</template>

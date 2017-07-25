@@ -1,0 +1,36 @@
+<template name="Users">
+    <h1 class="page-title">Admin Panel</h1>
+    {{#if isInRole 'user-admin'}}
+        <h1>Users</h1>
+        <table class="{{editMode}}">
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Admin</th>
+            </tr>
+            {{#each users}}
+                <tr>
+                    <td class="user_id">{{_id}}</td>
+                    <td>{{username}}</td>
+                    <td>{{userEmail}}</td>
+                    <td>{{dateFormat}}</td>
+                    <td>{{isAdmin}}
+                        {{#if currentEdit}}
+                            <div class="user-edit">
+                                <i class="fa fa-close close-edit-mode"></i>
+                                <h3>Edit User</h3>
+                                {{#if isAdmin}}
+                                    <button class="toggle-admin">Remove Admin</button>
+                                {{else}}
+                                    <button class="toggle-admin">Make Admin</button>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    {{/if}}
+</template>

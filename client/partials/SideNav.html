@@ -1,0 +1,15 @@
+<template name="SideNav">
+    <nav class="side-nav">
+        <ul>
+            <!--{{#if logged}}-->
+            <!--<li><a href="/"><i class="fa fa-home"></i>Home</a></li>-->
+            <!--{{/if}}-->
+            <!--<li><a class="{{active 'discover'}} side-nav-discover" href="/discover"><i class="fa fa-globe"></i>Discover</a></li>-->
+            <li><a class="{{active 'chat'}} side-nav-chat" href="/chat"><i class="fa fa-commenting"></i>Chat</a></li>
+            <li><a class="{{active 'rules'}} side-nav-rules" href="/rules"><i class="fa fa-book"></i>Rules</a></li>
+            {{#if isInRole 'user-admin'}}
+                <li><a class="nav-to-admin"><i class="fa fa-desktop"></i> Admin Panel</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+</template>
